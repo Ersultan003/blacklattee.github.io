@@ -1,0 +1,435 @@
+<?php error_reporting(0);
+ini_set("display_errors", 0);
+include_once "class.crm.php";
+$settings = CRM::getLandingSettings();
+if (isset($_GET['cpa_form'])) {
+    $crm = new CRM();
+    $crm->landingSendOrder();
+}
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Black Latte</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <?php echo isset($settings["header_code"]) && !empty($settings["header_code"]) ? $settings["header_code"] : ""; ?>
+
+</head>
+
+<body>
+  <main role="main">
+    <div class="jumbotron">
+      <div id="logo">
+        <h1 id="main-logo">Black Latte</h1>
+        <p class="product-descr"> Тәтті жақсы көріп арықтауды <br> армандайтындарға арналған Блэк латте
+        </p>
+      </div>
+      <div class="coffee-breaks">
+        <p class="coffee-break-1">
+          Майды сіңіріп, оны энергияға айналдырады<br />
+          Ағзадан токсиндер кетіреді
+        </p>
+        <p class="coffee-break-2">
+          Тәбетті басады және күш береді
+        </p>
+        <p class="coffee-break-3">
+          Денеден артық суды кетіреді<br />
+          Дофамин (бақыт гормоны) қосады
+        </p>
+      </div>
+      <button class="btn btn-lg site-btn scroll-to" style="margin-top: 45px;" href="#orderForm">Заказ беру</button>
+    </div>
+    <div class="product-cards-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-3 product-card col-xs-6 col-12">
+            <div class="product-card-1">
+              <h2>БЕЛСЕНДІРІЛГЕН КӨМІР</h2>
+              <p>Тағамнан майдың 80% - ға дейін сіңуіне және оның іште жиналуына кедергі етеді;
+                ескі май қорлары мен уытты заттардың қауіпсіз ыдырауын, қайта өңделуін және шығарылуын
+                қамтамасыз етеді. </p>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-3 product-card col-xs-6 col-12">
+            <div class="product-card-2">
+              <h2>L-CARNITIN</h2>
+              <p>Тері астындағы майды кетіреді, сонымен бірге тіпті қараусыз қалған целлюлиттің көріністерін де
+                жояды; терінің салбырауымен күреседі және ауыр салмақ жоғалтқаннан кейін денені бұрынғы
+                қалпына келтіруге көмектеседі.</p>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-3 product-card col-xs-6 col-12">
+            <div class="product-card-3">
+              <h2>КОКОС СҮТІ</h2>
+              <p>Метаболизмнің тездеуіне 3-4 есе тікелей әсер етеді. Денеде &quot;өзін — өзі тазарту&quot; процесін
+                бастайды, іш және &quot;галифа&quot;аймағында жинақталған ескі ішкі майды жояды. </p>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-3 product-card col-xs-6 col-12">
+            <div class="product-card-4">
+              <h2>ОМЕГА - 3</h2>
+              <p> Лептин деңгейін жоғарылатады, ағзадағы майлардың бөліну жылдамдығына жауап беретін
+                гормон. Біздің ағзамыз Омега-3 шығара алмайды, сондықтан омега-3ті сырттан қабылдау өте
+                маңызды.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-steps">
+      <div class="container">
+        <div class="block__text">
+          <p class="block-title-text" style=" margin-bottom: 3em;">BLACK LATTE қабылдауды
+            бастаған кезде сіздің денеңіз қалай өзгереді</p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="stepper">
+              <li class="step">
+                <div class="bullet">
+                  <span class="day-num">1</span> <br />Күн
+                </div>
+                <p class="step-text">
+                  Сіз таңертең қалай оянғаныңызды және демалғаныңызды байқайсыз </p>
+              </li>
+              <li class="step">
+                <div class="bullet">
+                  <span class="day-num">5</span> <br />Күн
+                </div>
+                <p class="step-text">
+                  Дене салмақ жоғалту режимінде жұмыс істейді, сіз 2-3 кг жоғалттыңыз</p>
+              </li>
+              <li class="step">
+                <div class="bullet">
+                  <span class="day-num">10</span> <br />Күн
+                </div>
+                <p class="step-text">
+                  5-6 кг салмақ жоғалттыңыз, кішірек киім киіп бастайсыз </p>
+              </li>
+              <li class="step">
+                <div class="bullet">
+                  <span class="day-num">21</span> <br />Күн
+                </div>
+                <p class="step-text">
+                  Дене жасартылды, сіздің көлеміңіз 6-7 см-ге азайды және 10 кг-ға салмағыңыз кетті </p>
+              </li>
+              <li class="step">
+                <div class="bullet">
+                  <span class="day-num">28</span> <br />Күн
+                </div>
+                <p class="step-text">
+                  Сіз 15-20 кг салмақ жоғалттыңыз және сексуалдық киімді 3 өлшемнен аз киесіз! </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="results">
+      <div class="container">
+        <div class="row">
+          <div class="d-none d-lg-block d-md-block col-md-6 results-image"></div>
+          <div class="col-md-6 col-sd-12">
+            <div style="width: 80%;">
+              <p class="block-title-text"> Толық курстың нәтижелері <br>Black Latte
+              </p>
+              <p style="padding-right: 1em;">
+                ЗЕРТТЕУГЕ 10-НАН 40 КГ-ҒА ДЕЙІН АРТЫҚ САЛМАҒЫ БАР 900 АДАМ ҚАТЫСТЫ</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="99" aria-valuemin="0"
+                  aria-valuemax="100">УКөлемдердің 11-16 см азаюы <label>91%</label> </div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 99%;" aria-valuenow="99" aria-valuemin="0"
+                  aria-valuemax="100">8-16 кг салмақ жоғалту <label>99%</label> </div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                  aria-valuemax="100">Қыжылдың жоғалуы және іштің ауырлығы кетуі<label>100%</label> </div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 97%;" aria-valuenow="97" aria-valuemin="0"
+                  aria-valuemax="100">Ұйқыны қалыпқа келтіру және өнімділікті арттыру<label>97%</label> </div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 97%;" aria-valuenow="97" aria-valuemin="0"
+                  aria-valuemax="100">Ісіну мен целлюлит көріністерін азайту<label>100%</label> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="world-health">
+            <div class="world-health__img">
+              <img src="img/image 30.svg" alt="">
+            </div>
+            <div class="world-health__text">
+              <p> Тестілеудің барлық кезеңдерін дүниежүзілік
+                <span style="color: #338BCB">денсаулық сақтау ұйымының мамандары растады</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="certificates">
+
+      <div class="certificates__header">
+        <div class="certificates__img">
+          <img src="img/Certif coffee 1.svg" alt="">
+        </div>
+        <div class="certificates-title">
+          <p class="block-title-text">
+            Біздің сертификаттар
+          </p>
+          <p>
+            Black LATTE тиімділігі АҚШ, Ресей және Израиль клиникаларында жүргізілген клиникалық
+            зерттеулердің нәтижелерімен расталады. </p>
+        </div>
+      </div>
+
+      <div class="site-bg">
+        <div class="container">
+          <div class="row certificates-list">
+            <div class="col-md-3">
+              <img src="img/image 26.png" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/image 27.png" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/image 28.png" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/image 29.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-carousel" style="padding-top:55px">
+      <div class="container">
+        <div class="block__text">
+          <p class="block-title-text">BLACK LATTEмен АРМАННАН НӘТИЖЕГЕ ДЕЙІН-БІР ҒАНА ҚАДАМ!</p>
+          <p> міне, біздің сатып алушылардың әңгімесі
+          </p>
+        </div>
+
+        <div id="reviews-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" style="margin: auto;">
+            <div class="carousel-item active">
+              <div class="carousel-item-content">
+                <div class="carousel-item-content-inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="review-side">
+                        <img src="img/image 51.png" />
+
+                      </div>
+
+                    </div>
+                    <div class="col-md-9">
+                      <h4> Наташа, 32 жаста </h4>
+                      <p class="review-top">
+                        "Мен алғашқы жүктілікке дейін киген джинсыма сыйдым!”
+                      </p>
+                      <p>
+                        Үшінші бала туылғаннан кейін мен айнаға қарай алмадым. Ішім, қолдарым. Жүктілік өте жақсы, бірақ
+                        сіз екі адамға тамақ ішуіңіз керек - бұл факт. алты айдан кейін мен артық салмақты қабылдауға
+                        шешім қабылдадым. Менің досым салмағын жоғалтуға көмектесетін кофе туралы айтты. Ол маған бірден
+                        бул өнімді әкелді. Қабылдаудың үшінші күні мен асқазанның жеңілдігін сезіндім. Бүкіл организм
+                        барлық 100 пайыз жұмыс істеді. Метаболизм жеделдеді. Мен тез арада бұрынғы формаға келдім, енді
+                        3 ай, күйеуім менің қандай тартымды және әдемі екенімді айтады. Мен ризамын. Кейде аптасына бір
+                        рет ішемін. Артық емес.
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-content-inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="review-side">
+                        <img src="img/camaria.jpg" />
+
+                      </div>
+
+                    </div>
+                    <div class="col-md-9">
+                      <h4>Қамария 36 жаста </h4>
+
+                      <p>
+                        Еки апта ишип журмин кофены, саган рахмет айткым келип тур, сен болмасан, мен блэклатте ишуге
+                        али коркып журетин едим! Куеуим айтады мен аздым деп, куанып кеттим! Курсты битирип, кейн
+                        кайтадан курс бастайм! 60кг болгым келеди! Блэклатте туралы достарыма айтып бердим! Сенин
+                        номеринди де бердим) Рахмет саган
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-content-inner">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="review-side">
+                        <img src="img/ravil.jpg" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <h4>Равиль 30 лет </h4>
+
+                      <p>
+                        У меня ожирение 2 степени, начали болеть кости, одышка достала даже при спокойной ходьбе. Я
+                        начал искать методы похудения скорого и в то же время я записался в зал, я пил Блэклатте и в то
+                        же время занимался спортом, я за месяц скинул 10 кг. Я удивился, обрадовался. Блэклатте и
+                        тренировки - лучший выход в моей ситуации. Не запускайте себя, а если запустили - блэклатте в
+                        помощь)))
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ol class="carousel-indicators">
+              <li data-target="#reviews-carousel" data-slide-to="0" class="active">1</li>
+              <li data-target="#reviews-carousel" data-slide-to="1">2</li>
+              <li data-target="#reviews-carousel" data-slide-to="2">3</li>
+            </ol>
+          </div>
+          <a class="carousel-control-prev" href="#reviews-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#reviews-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="order-form" style="padding-top: 3em">
+      <div class="container" style="position: relative;">
+        <div style="background: url('img/beans-left.png') left top no-repeat">
+          <div class="block__text">
+            <p class="block-title-text">
+              Дәмді BLACK LATTЕ-мен салмақ тастаудан артық арман жоқ!
+            </p>
+            <p>
+              Озіңіздің денеңізге артық салмақ тастауға көмектесіңіз!
+            </p>
+          </div>
+        </div>
+        <div
+          style="background: url('img/beans-right.png') right top no-repeat; height: 153px; position: absolute; right: 0; width: 380px; top: 0"
+          class="d-none d-lg-block d-md-block">
+
+        </div>
+        <div class="site-bg" style="height: 300px; position: relative; margin-top: 20em;">
+          <div class="row">
+            <div class="d-none d-lg-block d-md-block col-md-6 order-form-image">
+
+            </div>
+            <div class="form order-form col-md-6 col-sd-12">
+              <h4 class="discount">Скидка до 50%
+              </h4>
+              <h5 id="orderForm"><span style="text-decoration: line-through;" class="oldPrice">1980 тнг</span> <span
+                  class="newPrice">990 тнг</span></h5>
+              <p>Заполните поля ниже, чтобы получить скидку</p>
+              <span class="cpa-form-wrapper"></span>
+
+              <p style="color: #938A8A; font-size: smaller;">Оплата курьеру при получении</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="made-in-usa__wrapper">
+      <div class="made-in-usa__img">
+        <img src="img/image 31.png" alt="">
+      </div>
+      <div class="made-in-usa">
+        <h5>Made in USA</h5>
+        <p>АҚШ-та жасап шығарылған</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/app.min.js"></script>
+  <script language="javascript">
+    ! function (a, b) {
+      var c = a.getElementsByTagName("head")[0],
+        d = a.createElement("script"),
+        e = function () {
+          c.appendChild(d, c)
+        },
+        f = function (a) {
+          return a.length > 0 ? location.search.length > 0 ? "?" + a + "&" + location.search.substr(1) : "?" + a :
+            location.search.length > 0 ? location.search : ""
+        },
+        g = "referer=" + document.referrer,
+        h = "http://cpa.trafa.red/j2/black_latte/KG5AumUw";
+      d.type = "text/javascript", d.async = !0, d.src = h + f(g), e()
+    }(document, window);
+  </script>
+  <script type="text/javascript">
+    function cpaFormLoadedCallback() {
+      $('.cpa-select-country').change(function () {
+        var country = $(this).val();
+        $(".newPrice").text(parseInt(options[country].price) + ' ' + options[country].price_currency_abbr_short);
+        if (parseInt(options[country].price_old) > 0) {
+          $(".oldPrice").text(parseInt(options[country].price_old) + ' ' + options[country]
+            .price_old_currency_abbr_short);
+        } else {
+          $(".oldPrice").text(parseInt(options[country].price * 2) + ' ' + options[country]
+            .price_currency_abbr_short);
+        }
+        $("#crm-requisites").html(options[country].requisites);
+      });
+
+      $(".cpa-input-fio").attr("placeholder", "Ваше имя");
+      $(".cpa-input-phone").attr("placeholder", "Ваш телефон");
+      $(".cpa-input-submit").html("Заказать");
+
+      var country = $(".cpa-form-wrapper:first .cpa-select-country").val();
+
+      $(".newPrice").text(parseInt(options[country].price) + ' ' + options[country].price_currency_abbr_short);
+
+      if (parseInt(options[country].price_old) > 0) {
+        $(".oldPrice").text(parseInt(options[country].price_old) + ' ' + options[country]
+          .price_old_currency_abbr_short);
+      } else {
+        $(".oldPrice").text(parseInt(options[country].price * 2) + ' ' + options[country].price_currency_abbr_short);
+      }
+      $("#crm-requisites").html(options[country].requisites);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+</body>
+<?php echo isset($settings["footer_code"]) && !empty($settings["footer_code"]) ? $settings["footer_code"] : ""; ?>
+
+</html>
